@@ -1,4 +1,6 @@
-public class Exerc2_3 {
+package estcb.ficha1;
+
+public class F1_exerc2_3 {
 
     static int horas2s(int horas, int mins, int seg ){
         int h = horas*3600;

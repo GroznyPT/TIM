@@ -1,6 +1,6 @@
-import java.util.Date;
+package estcb.ficha1;
 
-public class Exerc_9 {
+public class F1_exerc_9 {
 
     static void printPessoa(String nomes, String moradas, String codPostais, String telefones, int dias, int meses, int anos, char estadoc) {
 
@@ -10,9 +10,9 @@ public class Exerc_9 {
         System.out.println("Telf:\t" + telefones);
         System.out.println("Data Nascimento:\t" + dias + "/" + meses + "/" + anos);
 
-        String estExtenso = getString(estadoc[]);
+       // String estExtenso = getString(estadoc[]);
 
-        System.out.println("Estado Civil:\t" + estExtenso);
+    //    System.out.println("Estado Civil:\t" + estExtenso);
 
     }
 
@@ -48,7 +48,7 @@ public class Exerc_9 {
 
     public static void main(String[] args) {
 
-        printPessoa();
+       printPessoa("Luis","CB","6000","926420455",4,6,1988,'s');
 
         System.out.println("Idade: " + getIdade ( 1988,2020));
 
@@ -81,7 +81,7 @@ public class Exerc_9 {
 
 
 
-        System.out.println("Idade: " + getIdade ( 1988,2020));
+       // System.out.println("Idade: " + getIdade ( 1988,2020));
 
 
     }

@@ -1,4 +1,6 @@
-public class Exerc_10 {
+package estcb.ficha1;
+
+public class F1_exerc_10 {
 
 
 
