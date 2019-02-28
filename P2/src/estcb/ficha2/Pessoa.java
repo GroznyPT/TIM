@@ -2,23 +2,46 @@ package estcb.ficha2;
 
 public class Pessoa {
 
-    String nome, morada, codPostal, localidade, telf;
-    int dia, mes, ano;
-    char estado;
+    private String nome, morada, codPostal, localidade, telf;
+    private int diaNasc, mesNasc, anoNasc;
+    private static char estadoCiv;
 
-    public Pessoa(String nome, String morada, String codPostal, String localidade, String telf, int dia, int mes, int ano, char estado) {
+    public Pessoa(String nome, String morada, String codPostal, String localidade, String telf, int diaNasc, int mesNasc, int ano, char estado) {
         this.nome = nome;
         this.morada = morada;
         this.codPostal = codPostal;
         this.localidade = localidade;
         this.telf = telf;
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
-        this.estado = estado;
+        this.diaNasc = diaNasc;
+        this.mesNasc = mesNasc;
+        this.anoNasc = ano;
+        this.estadoCiv = estado;
     }
 
+    public static String getEstadociv() {
+        String estExtenso;
+        switch (estadoCiv) {
+            case 's':
+                estExtenso = "Solteiro";
+                break;
+            case 'c':
+                estExtenso = "Casado";
+                break;
+            case 'd':
+                estExtenso = "Divorciado";
+                break;
+            case 'v':
+                estExtenso = "Viuvo";
+                break;
+            default:
+                estExtenso = "???";
+        }
+        return estExtenso;
+    }
 
+    public String getNome() {
+        return nome;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -56,36 +79,38 @@ public class Pessoa {
         this.telf = telf;
     }
 
-    public int getDia() {
-        return dia;
+    public int getDiaNasc() {
+        return diaNasc;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setDiaNasc(int diaNasc) {
+        this.diaNasc = diaNasc;
     }
 
-    public int getMes() {
-        return mes;
+    public int getMesNasc() {
+        return mesNasc;
     }
 
-    public void setMes(int mes) {
-        this.mes = mes;
+    public void setMesNasc(int mesNasc) {
+        this.mesNasc = mesNasc;
     }
 
-    public int getAno() {
-        return ano;
+    public int getAnoNasc() {
+        return anoNasc;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoNasc(int anoNasc) {
+        this.anoNasc = anoNasc;
     }
 
     public char getEstado() {
-        return estado;
+
+        return estadoCiv;
     }
 
     public void setEstado(char estado) {
-        this.estado = estado;
+        this.estadoCiv = estado;
     }
+
 }
 
