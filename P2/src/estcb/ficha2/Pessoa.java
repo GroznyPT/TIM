@@ -4,7 +4,10 @@ public class Pessoa {
 
     private String nome, morada, codPostal, localidade, telf;
     private int diaNasc, mesNasc, anoNasc;
-    private static char estadoCiv;
+    private char estadoCiv;
+
+    public Pessoa() {
+    }
 
     public Pessoa(String nome, String morada, String codPostal, String localidade, String telf, int diaNasc, int mesNasc, int ano, char estado) {
         this.nome = nome;
@@ -18,7 +21,7 @@ public class Pessoa {
         this.estadoCiv = estado;
     }
 
-    public static String getEstadociv() {
+    public String getEstadociv() {
         String estExtenso;
         switch (estadoCiv) {
             case 's':
