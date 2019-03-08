@@ -21,7 +21,7 @@ public class TestaElevador {
         e2.sobe();
         System.out.println(e2);
 
-        e3.irPara(1);
+        e3.irPara(3);
         System.out.println(e3);
 
       //  e1.acede(1);
