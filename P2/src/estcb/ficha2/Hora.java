@@ -55,6 +55,54 @@ public class Hora {
         }
     }
 
+
+    public int compareTo(Hora hora2){
+
+        if(hora != hora2.hora){
+            return hora - hora2.hora;
+        }
+
+        if (minuto != hora2.minuto){
+            return minuto - hora2.minuto;
+        }
+        return segundo - hora2.segundo;
+    }
+
+    public int somaHoras(int h){
+
+        int soma, dias;
+
+        soma = this.hora + h;
+        hora = soma % 24;
+       return dias = soma / 24;
+    }
+
+    public int somaminutos(int min){
+
+        int soma, minutos;
+
+        soma = this.minuto + min;
+        min = soma % 60;
+
+        return somaHoras(soma / 60);
+    }
+
+    public int somasegundos(int seg){
+
+        int soma = segundo + seg;
+        segundo = soma%60;
+        return somaminutos(soma/60);
+    }
+
+    public  int toSegundos(){
+        return hora*3600 + minuto * 60 + segundo;
+    }
+
+    public int difSeg(Hora h){
+
+        return this.toSegundos() - h.toSegundos();
+    }
+
     public int getMinito() {
         return minuto;
     }
