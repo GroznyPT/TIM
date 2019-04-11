@@ -1,12 +1,14 @@
 package securest.recurso;
 
+import p2.tempo.Hora;
 import p2.tempo.Horario;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
-public class Intalacao {
+public class Instalacao {
 
     private int id;
     private String local;
@@ -17,11 +19,27 @@ public class Intalacao {
     private LinkedList<Funcionario> funIn = new LinkedList<Funcionario>();
 
 
-    public Intalacao(int id, String local, int acesso, Horario horario) {
+    public Instalacao(int id, String local, int acesso, Horario horario) {
         this.id = id;
         this.local = local;
-        this.acesso = acesso;
+        setAcesso(acesso);
         this.horario = horario;
+    }
+
+    public boolean podeEntrar( Funcionario f, Hora h ){
+
+        if(!horario.estaDentro(h)){
+            return false;
+        }
+        return f.getAcesso() >= acesso || funAutoriza.contains(f);
+    }
+
+    public void addAutorizado( Funcionario f ){
+        funIn.add(f);
+    }
+
+    public void removeAutorizado( Funcionario f ){
+        funIn.remove(f);
     }
 
     public int getId() {
@@ -45,10 +63,10 @@ public class Intalacao {
     }
 
     public void setAcesso(int acesso) {
-        if (acesso <= 5 && acesso >= 1){
+        if (acesso <= SecurityLevel.MAX && acesso >= SecurityLevel.MIN){
             this.acesso = acesso;
         }
-        else this.acesso = 1;
+        else this.acesso = SecurityLevel.MAX;
     }
 
     public Horario getHorario() {
@@ -74,4 +92,30 @@ public class Intalacao {
     public void setFunIn(LinkedList<Funcionario> funIn) {
         this.funIn = funIn;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Instalacao)) return false;
+        Instalacao that = (Instalacao) o;
+        return getId() == that.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Instalacao{" +
+                "id: " + id +
+                ", Local: '" + local + '\'' +
+                ", Acesso: " + acesso +
+                ", Autorizados: " + funAutoriza +
+                ", Func. Presentes: " + funIn +
+                '}';
+    }
+
+
 }

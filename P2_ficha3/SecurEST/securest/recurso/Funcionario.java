@@ -2,16 +2,13 @@ package securest.recurso;
 
 import p2.tempo.Hora;
 
-import java.util.LinkedList;
-import java.util.Objects;
-
 public class Funcionario {
 
     private int id;
     private  String name;
     private  int acesso;
 
-    private Intalacao instalacao;
+    private Instalacao instalacao;
     Hora hora;
 
     public Funcionario(int id, String name, int acesso) {
@@ -68,24 +65,23 @@ public class Funcionario {
 
     public void setAcesso(int acesso) {
 
-        if (acesso <= 5 && acesso >= 1){
+        if (acesso <= SecurityLevel.MAX && acesso >= SecurityLevel.MIN){
             this.acesso = acesso;
         }
        else this.acesso = 1;
     }
 
-    public Intalacao getInstalacao() {
+    public Instalacao getInstalacao() {
         return instalacao;
     }
 
-    public void setInstalacao(Intalacao instalacao) {
+    public void setInstalacao(Instalacao instalacao) {
         this.instalacao = instalacao;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "id: " + id +
+        return  "id: " + id +
                 ", name: '" + name + '\'' +
                 ", acesso: " + acesso +
                 '}';
