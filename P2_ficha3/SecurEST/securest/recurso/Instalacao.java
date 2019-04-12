@@ -34,6 +34,25 @@ public class Instalacao {
         return f.getAcesso() >= acesso || funAutoriza.contains(f);
     }
 
+
+    public boolean entrar( Funcionario f ){
+        if(!podeEntrar(f,new Hora())){
+            return false;
+        }
+        f.setInstalacao(this);
+        funIn.add(f);
+        return true;
+    }
+
+    public void sair(Funcionario f){
+        if (!funIn.contains(f)){
+           return;
+        }
+        funIn.remove(f);
+        f.sair();
+    }
+
+
     public void addAutorizado( Funcionario f ){
         funIn.add(f);
     }

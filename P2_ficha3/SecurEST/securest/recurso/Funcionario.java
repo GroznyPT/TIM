@@ -75,8 +75,12 @@ public class Funcionario {
         return instalacao;
     }
 
-    public void setInstalacao(Instalacao instalacao) {
+    void setInstalacao(Instalacao instalacao) {
         this.instalacao = instalacao;
+    }
+
+    void sair() {
+        setInstalacao(null);
     }
 
     @Override
