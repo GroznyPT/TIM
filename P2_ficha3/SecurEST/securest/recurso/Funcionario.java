@@ -39,7 +39,7 @@ public class Funcionario {
     }
 
     public boolean estaPresente( ){
-       return true; // apagar
+       return instalacao != null;
     }
 
 
