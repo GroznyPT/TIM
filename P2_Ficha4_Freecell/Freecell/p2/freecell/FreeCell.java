@@ -22,12 +22,13 @@ public class FreeCell extends JFrame {
 
 	//escolher qual dos baralhos utilizar
 	//private Baralho baralho = new Baralho( 73, 97, "cartas.gif", 1 );	
-	private Baralho baralho = new Baralho( 73, 97, "cartaswin.gif", 1 );
+	private Baralho baralho = new Baralho( 73, 97, "resources/cartaswin.gif", 1 );
 
 	private Coluna asColunas[] = new Coluna[ 8 ];
 	private Celula asCelulas[] = new Celula[ 4 ];
 	private Casa   asCasas[]   = new Casa[ 4 ];
 	private int origemIdx;
+	private int origemTipo;
 
 	public FreeCell( ){
 		setTitle( "Freecell" );
@@ -132,8 +133,21 @@ public class FreeCell extends JFrame {
 			if (asColunas[i].estaDentro(pt)){
 				asColunas[i].setSeleccionado(true);
 				origemIdx = i;
-				mesaJogo.repaint();
+				origemTipo = ORIGEM_COLUNA;
 				click=2;
+				mesaJogo.repaint();
+				return;
+			}
+
+		}
+
+		for (int i = 0; i<asCelulas.length; i++){
+			if (asCelulas[i].estaDentro(pt)){
+				asCelulas[i].setSeleccionado(true);
+				origemIdx = i;
+				origemTipo = ORIGEM_CELULA;
+				click=2;
+				mesaJogo.repaint();
 				return;
 			}
 
@@ -148,12 +162,15 @@ public class FreeCell extends JFrame {
 	 */
 	private void escolherDestino( Point pt ) {
 		click = 1;
-		asColunas[origemIdx].setSeleccionado(false);
-		Carta c = asColunas[origemIdx].getCarta();
+
+		desselecionarOrigem();
+		Carta c = getCartaOrigem();
+
+
 		for (int i = 0; i < asColunas.length; i++){
 			if (asColunas[i].estaDentro(pt)){
 				if (asColunas[i].podeReceber(c)){
-					asColunas[origemIdx].retirar();
+					removerCartaOrigem();
 					asColunas[i].receber(c);
 				}
 				mesaJogo.repaint();
@@ -164,16 +181,51 @@ public class FreeCell extends JFrame {
 		for (int i = 0; i < asCelulas.length; i++){
 			if (asCelulas[i].estaDentro(pt)){
 				if (asCelulas[i].podeReceber(c)){
-					asColunas[origemIdx].retirar();
+					removerCartaOrigem();
 					asCelulas[i].receber(c);
 				}
 				mesaJogo.repaint();
 				return;
 			}
 		}
+
+		for(int i = 0; i < asCasas.length; i++){
+			if(asCasas[i].estaDentro(pt)){
+				if (asCasas[i].receber(c)){
+					removerCartaOrigem();
+					asCasas[i].receber(c);
+				}
+				mesaJogo.repaint();
+				return;
+			}
+		}
+
+
 		mesaJogo.repaint();
 	}
-	
+
+	private void removerCartaOrigem() {
+		if (origemTipo == ORIGEM_COLUNA)
+			asColunas[origemIdx].retirar();
+		else
+			asCelulas[origemIdx].retirar();
+	}
+
+	private Carta getCartaOrigem() {
+		Carta c;
+		if (origemTipo == ORIGEM_COLUNA)
+			return asColunas[origemIdx].getCarta();
+		else
+			return asCelulas[origemIdx].getCarta();
+	}
+
+	private void desselecionarOrigem() {
+		if(origemTipo == ORIGEM_COLUNA)
+		asColunas[origemIdx].setSeleccionado(false);
+		else
+		asCelulas[origemIdx].setSeleccionado(false);
+	}
+
 	private void testarFim() {
 		if( ganhou() )
 			JOptionPane.showMessageDialog( this, "Parabéns! Ganhou!",
@@ -188,7 +240,12 @@ public class FreeCell extends JFrame {
 	 * @return true se ganhou
 	 */
 	private boolean ganhou(){		
-		return false;
+		for (Casa c : asCasas){
+			if (c.estaVazio() || c.getCarta().getFace() != Carta.REI){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	/**

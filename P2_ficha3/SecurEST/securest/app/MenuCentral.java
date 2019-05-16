@@ -3,7 +3,10 @@ package securest.app;
 
 import consola.SConsola;
 import p2.tempo.Hora;
+import p2.tempo.Periodo;
 import securest.recurso.CentralControlo;
+import securest.recurso.Funcionario;
+import securest.recurso.Instalacao;
 
 /**
  * Classe que trata dos menus da central de comandos
@@ -18,15 +21,15 @@ public class MenuCentral {
 	}
 
 	/**
-	 * menu principal da aplicação
+	 * menu principal da aplicaï¿½ï¿½o
 	 */
 	public void menuPrincipal(){
 		String menu = "Central de controlo - controlo de acessos\n" + 
-				"1- Info sobre instalação\n"+
-				"2- Info sobre funcionário\n" + 
-				"3- Entrada de funcionário\n"+
-				"4- Saída de funcionário\n"+
-				"5- Listar presenças em todas as instalações\n"+
+				"1- Info sobre instalaï¿½ï¿½o\n"+
+				"2- Info sobre funcionï¿½rio\n" + 
+				"3- Entrada de funcionï¿½rio\n"+
+				"4- Saï¿½da de funcionï¿½rio\n"+
+				"5- Listar presenï¿½as em todas as instalaï¿½ï¿½es\n"+
 				"\n0- Sair";
 
 		char opcao = 0;
@@ -53,7 +56,7 @@ public class MenuCentral {
 				break;
 			case '0': break;
 			default:
-				consola.println( "opção inválida");
+				consola.println( "opï¿½ï¿½o invï¿½lida");
 				consola.readLine();
 			}
 		} while( opcao != '0' );
@@ -62,86 +65,93 @@ public class MenuCentral {
 	}
 
 	/**
-	 * imprime a informação de uma instalação 
+	 * imprime a informaï¿½ï¿½o de uma instalaï¿½ï¿½o 
 	 */
 	private void printInstalacao( ) {
-		Object inst = getInstalacao( "Código da instalação? ");
+		Instalacao inst = getInstalacao( "Cï¿½digo da instalaï¿½ï¿½o? ");
 		consola.clear();
-		consola.println( "<NOME da istalação>" );		
-		consola.println("id: <ID inst>" );
-		consola.println("nivel acesso: <NIVEL inst>" );
+		consola.println( inst.getDescricao() );
+		consola.println("id:" + inst.getId() );
+		consola.println("nivel acesso: " + inst.getNivel() );
 		consola.print("Autorizados: " );
 		// para todos os autorizados apresentar
-			consola.print( "<NOME FUNC>, " );
+		for (Funcionario f : inst.getAutorizados())
+			consola.print( f.getNomes() +  "," );
 		consola.println();
 		consola.print("Presentes: " );
 		// para todos os presentes apresentar
-			consola.print( "<NOME FUNC>, " );
+		for (Funcionario f : inst.getPresentes())
+			consola.print( f.getNomes() +  "," );
 		consola.println();
-		consola.println("Horário funcionamento");
-		// para todos os periodos do horário apresentá-los
+		consola.println("Horï¿½rio funcionamento");
+		// para todos os periodos do horï¿½rio apresentï¿½-los
+		for (Periodo p: inst.getHorario().getPeriodos())
+			String s = String.format("%02d:%02d - %02d:%02d"", p.getIni().getHoras(),p.getIni().getMinutos(),
+							" )
 
 		consola.readLine();
 	}
 
 	/**
-	 * imprime a informação de um funcionário 
+	 * imprime a informaï¿½ï¿½o de um funcionï¿½rio 
 	 */
 	private void printFuncionario( ) {
-		Object f = getFuncionario( "Código do funcionário? ");
+		Funcionario f = getFuncionario( "Codigo do funcionario? ");
 		consola.clear();
-		consola.println( "<NOME FUNC>" );		
-		consola.println("id: <ID FUNC>" );
-		consola.println("nivel acesso: <NIVEL FUNC>" );
-		if( true /* se está presente numa instalação */ )
-			consola.print("Presente em <NOME INST>" );
+		consola.println( f.getName() );
+		consola.println("id: " + f.getId() );
+		consola.println("nivel acesso: " + f.getAcesso() );
+		if( f.estaPresente() /* se estï¿½ presente numa instalaï¿½ï¿½o */ )
+			consola.print("Presente em " + f.getInstalacao().getDescricao() );
 		else
-			consola.print("Não está presente neste momento em lado nenhum" );
+			consola.print("Nao esta presente neste momento em lado nenhum" );
 		consola.readLine();
 	}
 
 	
 	/**
-	 * processa a entrada de um funcionário
+	 * processa a entrada de um funcionario
 	 */
 	private void entradaFuncionario() {
-		Object f = getFuncionario( "Código do funcionário a entrar? ") ;
-		Object i = getInstalacao( "Código da instalação onde vai entrar? ");
+		Funcionario f = getFuncionario( "Cï¿½digo do funcionï¿½rio a entrar? ") ;
+		Instalacao i = getInstalacao( "Cï¿½digo da instalaï¿½ï¿½o onde vai entrar? ");
 		
-		consola.println( /*pode entrar?*/ true? "Pode entrar" : "Impedido de entrar!");
+		consola.println( i.entrar(f)? /*pode entrar?*/ "Pode entrar" : "Impedido de entrar!");
 		consola.readLine();
 	}
 
 	/**
-	 * processa a saída de um funcionário
+	 * processa a saï¿½da de um funcionï¿½rio
 	 */
 	private void saidaFuncionario() {
-		Object f = getFuncionario( "Código do funcionário a sair? ") ;
-		if( true /* está oresente num a instalação */ ){
-			// processar saída da instalação onde está
-			consola.println("O funcionário <NOME FUNC> saiu de <NOME INST>" );
+		Funcionario f = getFuncionario( "Codigo do funcionario a sair? ") ;
+		if( f.estaPresente() /* estï¿½ oresente num a instalaï¿½ï¿½o */ ){
+			// processar saï¿½da da instalaï¿½ï¿½o onde estï¿½
+			Instalacao instalacao = f.getInstalacao();
+			instalacao.sair(f);
+			consola.println("O funcionario " + f.getName() + " saiu de " + instalacao.getDescriÃ§Ã£o() );
 		}
 		else {
-			consola.println("O funcionário <NOME FUNC> não está em nenhuma instalação!");
+			consola.println("O funcionario" + f.getName() + " nao esta em nenhuma instalacao!");
 		}
 		consola.readLine();
 	}
 
 
 	/**
-	 * pergunta ao utilizador qual o id do funcionário que vai ser processado
-	 * e retorna o funcionário correspondente
-	 * @param msg a mensagem a pedir o funcionário
-	 * @return o funcionário pedido
+	 * pergunta ao utilizador qual o id do funcionï¿½rio que vai ser processado
+	 * e retorna o funcionï¿½rio correspondente
+	 * @param msg a mensagem a pedir o funcionï¿½rio
+	 * @return o funcionï¿½rio pedido
 	 */
-	private Object getFuncionario( String msg ){
-		Object f = null;
+	private Funcionario getFuncionario( String msg ){
+		Funcionario f = null;
 		do {
 			consola.print( msg );
 			int id = consola.readInt();
 			f = central.getFuncionario( id );
 			if( f == null ){
-				consola.println("Esse funcionário não existe!");
+				consola.println("Esse funcionï¿½rio nï¿½o existe!");
 				consola.readLine();
 			}
 		}while( f == null );
@@ -149,19 +159,19 @@ public class MenuCentral {
 	}
 
 	/**
-	 * pergunta ao utilizador qual o id da instalação que vai ser processada
-	 * e retorna a instalação correspondente
-	 * @param msg a mensagem a pedir a instalação
-	 * @return a instalação pedida
+	 * pergunta ao utilizador qual o id da instalaï¿½ï¿½o que vai ser processada
+	 * e retorna a instalaï¿½ï¿½o correspondente
+	 * @param msg a mensagem a pedir a instalaï¿½ï¿½o
+	 * @return a instalaï¿½ï¿½o pedida
 	 */
-	private Object getInstalacao( String msg ){
+	private Instalacao getInstalacao( String msg ){
 		Object i = null;
 		do {
 			consola.print( msg );
 			int id = consola.readInt();
 			i = central.getInstalacao( id );
 			if( i == null ){
-				consola.println("Essa instalação não existe!");
+				consola.println("Essa instalaï¿½ï¿½o nï¿½o existe!");
 				consola.readLine();
 			}
 		}while( i == null );
@@ -169,16 +179,17 @@ public class MenuCentral {
 	}
 	
 	/**
-	 * lista todas as presenças em todas as instalações 
+	 * lista todas as presenï¿½as em todas as instalaï¿½ï¿½es 
 	 */
 	private void listarPresencas() {
 		consola.clear();
-		/* para todas as instalações */ {
-			consola.println( "presentes em <NOME INST>  (NIVEL INST>" );
-			/* para todos os funcionários */
-				consola.println( "<NOME FUNC>   (NIVEL FUNC)" );
+		for (Instalacao i : central.getInstalacoes()){
+			consola.println("presentes em " + i.getDescricao() + "(" + i.getNivel() + ")");
+		}
+			/* para todos os funcionarios */
+		for (Funcionario f : i.getPresentes())
+				consola.println( f.getNome() + "(" + f.getNivel() + ")");
 			consola.println( "-----------------" );
 		}		
 	}
-	
-}
+

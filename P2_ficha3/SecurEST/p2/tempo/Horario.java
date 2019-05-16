@@ -19,7 +19,7 @@ public class Horario {
         }
         periodos.add(p);
     }
-    
+
     public void removePeriodo(int idx) {
         periodos.remove(idx);
     }

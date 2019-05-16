@@ -16,7 +16,7 @@ public class Instalacao {
     private Horario horario;
 
     private LinkedList<Funcionario> funAutoriza = new LinkedList<Funcionario>();
-    private LinkedList<Funcionario> funIn = new LinkedList<Funcionario>();
+    private LinkedList<Funcionario> presentes = new LinkedList<Funcionario>();
 
 
     public Instalacao(int id, String local, int acesso, Horario horario) {
@@ -40,25 +40,25 @@ public class Instalacao {
             return false;
         }
         f.setInstalacao(this);
-        funIn.add(f);
+        presentes.add(f);
         return true;
     }
 
     public void sair(Funcionario f){
-        if (!funIn.contains(f)){
+        if (!presentes.contains(f)){
            return;
         }
-        funIn.remove(f);
+        presentes.remove(f);
         f.sair();
     }
 
 
     public void addAutorizado( Funcionario f ){
-        funIn.add(f);
+        presentes.add(f);
     }
 
     public void removeAutorizado( Funcionario f ){
-        funIn.remove(f);
+        presentes.remove(f);
     }
 
     public int getId() {
@@ -104,12 +104,12 @@ public class Instalacao {
         this.funAutoriza = funAutoriza;
     }
 
-    public List<Funcionario> getFunIn() {
-        return Collections.unmodifiableList(funIn);
+    public List<Funcionario> getPresentes() {
+        return Collections.unmodifiableList(presentes);
     }
 
-    public void setFunIn(LinkedList<Funcionario> funIn) {
-        this.funIn = funIn;
+    public void setPresentes(LinkedList<Funcionario> presentes) {
+        this.presentes = presentes;
     }
 
     @Override
@@ -132,7 +132,7 @@ public class Instalacao {
                 ", Local: '" + local + '\'' +
                 ", Acesso: " + acesso +
                 ", Autorizados: " + funAutoriza +
-                ", Func. Presentes: " + funIn +
+                ", Func. Presentes: " + presentes +
                 '}';
     }
 

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="37ea2e65-a2ff-41ef-82c2-b84ead5a6ec6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecurEST/securest/app/MenuCentral.java" beforeDir="false" afterPath="$PROJECT_DIR$/SecurEST/securest/app/MenuCentral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,15 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SecurEST/securest/recurso/Funcionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
+            <state relative-caret-position="816">
               <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="e#827#828#0" expanded="true" />
@@ -36,8 +38,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="119">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SecurEST/securest/app/MenuCentral.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="195" selection-start-line="195" selection-end-line="195" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,48 +62,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="1326">
+              <caret line="106" column="36" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1397#1398#0" expanded="true" />
-                <element signature="e#1422#1423#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1483#1484#0" expanded="true" />
-                <element signature="e#1515#1516#0" expanded="true" />
-                <element signature="e#1543#1544#0" expanded="true" />
-                <element signature="e#1585#1586#0" expanded="true" />
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1649#1650#0" expanded="true" />
-                <element signature="e#1678#1679#0" expanded="true" />
-                <element signature="e#1923#1924#0" expanded="true" />
-                <element signature="e#1953#1954#0" expanded="true" />
-                <element signature="e#2000#2001#0" expanded="true" />
-                <element signature="e#2038#2039#0" expanded="true" />
-                <element signature="e#2087#2088#0" expanded="true" />
-                <element signature="e#2151#2152#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2268#2269#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-                <element signature="e#2428#2429#0" expanded="true" />
-                <element signature="e#2462#2463#0" expanded="true" />
-                <element signature="e#2736#2737#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding>
-                <element signature="e#132#141#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -106,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SecurEST/p2/tempo/Periodo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1190">
+            <state relative-caret-position="102">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
@@ -121,6 +107,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>printI</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -131,10 +122,11 @@
         <option value="$PROJECT_DIR$/SecurEST/securest/recurso/SecurityLevel.java" />
         <option value="$PROJECT_DIR$/SecurEST/securest/recurso/Intalacao.java" />
         <option value="$PROJECT_DIR$/SecurEST/Test/TestaInstalacao.java" />
-        <option value="$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java" />
-        <option value="$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java" />
         <option value="$PROJECT_DIR$/SecurEST/securest/recurso/Funcionario.java" />
         <option value="$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java" />
+        <option value="$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java" />
+        <option value="$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java" />
+        <option value="$PROJECT_DIR$/SecurEST/securest/app/MenuCentral.java" />
       </list>
     </option>
   </component>
@@ -151,48 +143,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-              <item name="SecurEST" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-              <item name="SecurEST" type="462c0819:PsiDirectoryNode" />
-              <item name="tempo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-              <item name="SecurEST" type="462c0819:PsiDirectoryNode" />
-              <item name="securest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-              <item name="SecurEST" type="462c0819:PsiDirectoryNode" />
-              <item name="securest" type="462c0819:PsiDirectoryNode" />
-              <item name="recurso" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2_ficha3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P2_ficha3" type="462c0819:PsiDirectoryNode" />
-              <item name="SecurEST" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,6 +152,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554456550038" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../P2_Ficha4_Freecell" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -258,18 +211,21 @@
       <workItem from="1554969458124" duration="130000" />
       <workItem from="1554969794797" duration="5106000" />
       <workItem from="1555056300905" duration="3832000" />
-      <workItem from="1556785322524" duration="2453000" />
+      <workItem from="1556785322524" duration="3074000" />
+      <workItem from="1556838104424" duration="646000" />
+      <workItem from="1556840757986" duration="291000" />
+      <workItem from="1557389287952" duration="5114000" />
+      <workItem from="1557475722868" duration="162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16139000" />
+    <option name="totallyTimeSpent" value="22973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17718121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -278,7 +234,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41359773" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41359773" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,7 +243,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -312,9 +268,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SecurEST/Test/TestaInstalacao.java" />
+    <entry file="file://$PROJECT_DIR$/SecurEST/consola/ConsolePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SecurEST/consola/ConsoleCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1887">
+          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SecurEST/consola/ConsoleApplet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SecurEST/securest/recurso/Funcionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="816">
           <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="e#827#828#0" expanded="true" />
@@ -327,8 +307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SecurEST/Test/TestFuncionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="119">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -337,35 +317,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SecurEST/securest/recurso/Instalacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="1326">
+          <caret line="106" column="36" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1619#1620#0" expanded="true" />
-            <element signature="e#1649#1650#0" expanded="true" />
-            <element signature="e#1678#1679#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
-            <element signature="e#2000#2001#0" expanded="true" />
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2087#2088#0" expanded="true" />
-            <element signature="e#2151#2152#0" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
-            <element signature="e#2268#2269#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2736#2737#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -378,18 +341,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SecurEST/p2/tempo/Periodo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1190">
+        <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SecurEST/p2/tempo/Horario.java">
+    <entry file="file://$PROJECT_DIR$/SecurEST/securest/app/MenuCentral.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="553">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
           <folding>
-            <element signature="e#132#141#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
