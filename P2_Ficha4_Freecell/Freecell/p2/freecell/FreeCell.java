@@ -130,7 +130,7 @@ public class FreeCell extends JFrame {
 	private void escolherOrigem( Point pt ) {
 
 		for (int i = 0; i<asColunas.length; i++){
-			if (asColunas[i].estaDentro(pt)){
+			if (!asColunas[i].estaVazio() && asColunas[i].estaDentro(pt)){
 				asColunas[i].setSeleccionado(true);
 				origemIdx = i;
 				origemTipo = ORIGEM_COLUNA;
@@ -142,7 +142,7 @@ public class FreeCell extends JFrame {
 		}
 
 		for (int i = 0; i<asCelulas.length; i++){
-			if (asCelulas[i].estaDentro(pt)){
+			if (!asCelulas[i].estaVazio() && asCelulas[i].estaDentro(pt)){
 				asCelulas[i].setSeleccionado(true);
 				origemIdx = i;
 				origemTipo = ORIGEM_CELULA;
@@ -253,7 +253,22 @@ public class FreeCell extends JFrame {
 	 * @return true se perdeu
 	 */
 	private boolean perdeu() {
-		return false;
+		for(Coluna col : asColunas){
+			if(col.estaVazio())
+				return false;
+
+		Carta c = col.getCarta();
+		for (Coluna dest: asColunas)
+			if (dest.podeReceber(c))
+				return false;
+
+			for (Celula dest: asCelulas)
+				if (dest.podeReceber(c))
+					return false;
+
+			for (Casa dest: asCasas)
+				if (dest.podeReceber(c))
+					return false;
 	}
 
 	class ZonaJogo extends JPanel {
